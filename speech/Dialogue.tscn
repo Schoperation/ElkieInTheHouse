@@ -81,33 +81,8 @@ rect_scale = Vector2( 1, 0.96 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
-text = "dsadsadasdasdasdasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="Button" parent="Choices/VBoxContainer"]
-margin_top = 104.0
-margin_right = 580.0
-margin_bottom = 154.0
-rect_min_size = Vector2( 580, 50 )
-size_flags_horizontal = 0
-size_flags_vertical = 5
-custom_styles/hover = SubResource( 1 )
-custom_fonts/font = ExtResource( 2 )
-action_mode = 0
-clip_text = true
-align = 0
-
-[node name="Label" type="Label" parent="Choices/VBoxContainer/Button2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_scale = Vector2( 1, 0.96 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-text = "dsadsadasdasdasdasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+text = "Hello nerd"
+valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
