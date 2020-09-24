@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://speech/SpeechTree.gd" type="Script" id=1]
+[ext_resource path="res://fonts/cmu-typewriter/Typewriter.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogue" type="Panel" parent="."]
+anchor_left = 0.108
+anchor_right = 0.108
+margin_left = -355.002
+margin_top = 155.859
+margin_right = 244.998
+margin_bottom = 755.859
+rect_scale = Vector2( 1.27895, 0.316173 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="RichTextLabel" parent="Dialogue"]
+margin_left = 7.9895
+margin_top = 14.7217
+margin_right = 487.99
+margin_bottom = 144.722
+rect_scale = Vector2( 0.998302, 3.57494 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "why hello there. today we shall go to the ewok village"
+text = "why hello there. today we shall go to the ewok village"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choices" type="ScrollContainer" parent="."]
+margin_left = -350.682
+margin_top = 155.859
+margin_right = 229.318
+margin_bottom = 655.859
+rect_scale = Vector2( 1.32, 1 )
+rect_clip_content = false
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choices"]
+margin_right = 580.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 580, 500 )
+
+[node name="Button" type="Button" parent="Choices/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 580, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 5
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+action_mode = 0
+clip_text = true
+align = 0
+
+[node name="Label" type="Label" parent="Choices/VBoxContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, 0.96 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "dsadsadasdasdasdasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Choices/VBoxContainer"]
+margin_top = 104.0
+margin_right = 580.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 580, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 5
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+action_mode = 0
+clip_text = true
+align = 0
+
+[node name="Label" type="Label" parent="Choices/VBoxContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, 0.96 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "dsadsadasdasdasdasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

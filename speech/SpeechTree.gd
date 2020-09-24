@@ -14,6 +14,12 @@ class Leaf:
 	var goesBack: bool
 	var goesBackMsg: String
 	
+	var hasCondition: bool # Check a condition in order to show it
+	var condition
+	
+	# Variables below this comment are set in-game
+	var read: bool
+	
 	func _init(name, dialogue, options, goesBack, goesBackMsg):
 		self.name = name
 		self.dialogue = dialogue
@@ -25,8 +31,3 @@ class Leaf:
 func _ready():
 	var array = [0, 1, 2]
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

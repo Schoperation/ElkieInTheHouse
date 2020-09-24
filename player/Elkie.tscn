@@ -29,16 +29,13 @@ animations = [ {
 extents = Vector2( 53, 53.736 )
 
 [node name="Elkie" type="Area2D"]
-position = Vector2( 306.802, 220.739 )
+position = Vector2( 640.91, 344.535 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "still"
-frame = 2
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
