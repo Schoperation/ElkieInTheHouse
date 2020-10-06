@@ -15,14 +15,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "still",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
 "speed": 15.0
 } ]
 
@@ -36,7 +36,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "still"
-frame = 7
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -44,3 +44,4 @@ position = Vector2( -5, 3 )
 shape = SubResource( 2 )
 
 [node name="Control" parent="." instance=ExtResource( 12 )]
+speechJson = " res://speech/sample.json"

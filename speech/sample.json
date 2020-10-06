@@ -1,42 +1,43 @@
 {
 	"0" : {
-	"choice": "Back",
-	"dialogue": "Hello there",
-	"options": ["1", "2"]
+		"choice": "Back",
+		"dialogue": "Hello there",
+		"options": ["1", "2"]
 	},
 	
-    	"1" : {
-    	"choice": "Choose THIS one",
-    	"dialogue": "You chose this one",
-    	"options": ["3", "4", "1", "2"]
-    	},
-    	   "3" : {
-            "choice": "My name is Nancy Pelosi",
-            "dialogue": "I bet it is!",
-            "options": ["3", "4", "1", "2"]
-            },
+		"1" : {
+			"choice": "Choose THIS one",
+			"dialogue": "You chose this one",
+			"options": ["3", "4", "1", "2"]
+		},
+		   "3" : {
+				"choice": "My name is Nancy Pelosi",
+				"dialogue": "I bet it is!",
+				"options": ["3", "4", "1", "2"]
+			},
 
-            "4" : {
-            "choice": "And I've been serving the Great San Francisco Bay Area since 3000 BC",
-            "dialogue": "Hmm, why are you still here?",
-            "options": ["5", "6"]
-            },
-                "5" : {
-                "choice": "Uhh... Goodbye",
-                "dialogue": "k",
-                "options": []
-                },
+			"4" : {
+				"choice": "And I've been serving the Great San Francisco Bay Area since 3000 BC",
+				"dialogue": "Hmm, why are you still here?",
+				"condition": "showtest",
+				"trigger": "bigFunnyHaHa()",
+				"options": ["5", "6"]
+			},
+				"5" : {
+					"choice": "Uhh... Goodbye",
+					"dialogue": "k",
+					"options": []
+				},
 
-                "6" : {
-                "choice": "idk why are YOU here?",
-                "dialogue": "Because I was elected, thank you very much.",
-                "options": ["3", "4", "1", "2"]
-                },
+				"6" : {
+					"choice": "idk why are YOU here?",
+					"dialogue": "Because I was elected, thank you very much.",
+					"options": ["3", "4", "1", "2"]
+				},
 
-
-    	"2" : {
-    	"choice": "Choose THAT one",
-    	"dialogue": "You chose that one",
-    	"options": ["5"]
-    	}       
+		"2" : {
+			"choice": "Choose THAT one",
+			"dialogue": "You chose that one",
+			"options": ["5"]
+		}       
 }
