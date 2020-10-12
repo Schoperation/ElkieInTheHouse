@@ -36,12 +36,12 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "still"
-frame = 8
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5, 3 )
 shape = SubResource( 2 )
 
-[node name="Control" parent="." instance=ExtResource( 12 )]
-speechJson = " res://speech/sample.json"
+[node name="DIalogueComponent" parent="." instance=ExtResource( 12 )]
+speechJson = "res://speech/sample.json"

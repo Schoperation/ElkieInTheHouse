@@ -19,8 +19,8 @@
 			"4" : {
 				"choice": "And I've been serving the Great San Francisco Bay Area since 3000 BC",
 				"dialogue": "Hmm, why are you still here?",
-				"condition": "showtest",
-				"trigger": "bigFunnyHaHa()",
+				"condition": "showTest",
+				"trigger": "bigFunnyHaHa",
 				"options": ["5", "6"]
 			},
 				"5" : {

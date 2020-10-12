@@ -7,11 +7,10 @@ The root node is the start of the conversation. It can be directly accessed at a
 """
 
 # Attach json file here
-export var speechJson = " "
+export var speechJson = ""
 
 # Main speech tree
 var speechTree
-var showtest = false
 
 class Leaf:
 	var id: String
@@ -64,12 +63,15 @@ class SpeechTree:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	speechTree = createSpeechTree("res://speech/sample.json") # "res://speech/sample.json"
-	pass
+	print(speechJson)
+	speechTree = createSpeechTree(speechJson) # "res://speech/sample.json"
 	
-func _process(delta):
-	if Input.is_key_pressed(KEY_E):
+func _input(ev):
+	if Input.is_action_just_pressed("activate"):
 		showDialogue(speechTree.rootLeaf)
+	if Input.is_action_just_pressed("debug"):
+		$SpeechConditions.list["showTest"] = not $SpeechConditions.list["showTest"]
+		print($SpeechConditions.list["showTest"])
 	
 func showDialogue(leaf):
 	$Choices.hide()
@@ -96,46 +98,28 @@ func showOptions(leaf):
 	# Create buttons
 	var choiceButton = load("res://speech/ChoiceButton.tscn")
 	for op in leaf.options:
+		var subLeaf = speechTree.getLeafFromId(op)
+		
 		# Check condition
-		if speechTree.getLeafFromId(op).hasCondition:
-			var expr = str2var(speechTree.getLeafFromId(op).condition)
-			print(expr)
-			var thisistrue = (expr == true)
-			print(thisistrue)
-			if expr:
-				var button = choiceButton.instance()
-				button.leaf = speechTree.getLeafFromId(op)
-				button.node = self
-				button.get_node("Label").text = speechTree.getLeafFromId(op).choice
-				$Choices/VBoxContainer.add_child(button)
-			else:
-				pass
-					
-			"""
-			var expr = Expression.new()
-			
-			var error = expr.parse(speechTree.getLeafFromId(op).condition, [])
-			if error != OK:
-				print(\"Error evaluating the condition for \" + str(speechTree.getLeafFromId(op)) + \"  \" + expr.get_error_text())
-			else:
-				var result = expr.execute([], null, true)
-				print(expr.parse(speechTree.getLeafFromId(op).condition, []))
-				print(result)
-				if not expr.has_execute_failed() and result:
-					var button = choiceButton.instance()
-					button.leaf = speechTree.getLeafFromId(op)
-					button.node = self
-					button.get_node(\"Label\").text = speechTree.getLeafFromId(op).choice
-					$Choices/VBoxContainer.add_child(button)
-				else:
-					pass
-			"""
-		else:
+		if checkCondition(subLeaf):	
 			var button = choiceButton.instance()
-			button.leaf = speechTree.getLeafFromId(op)
+			button.leaf = subLeaf
 			button.node = self
-			button.get_node("Label").text = speechTree.getLeafFromId(op).choice
+			button.get_node("Label").text = subLeaf.choice
 			$Choices/VBoxContainer.add_child(button)
+		else:
+			pass
+			
+# Checks if a leaf's condition is true. I would put this in the class but it requires another script...
+# BOOOOooooooooOOOOOOOOOOOOOoooooooooooOOOOOOOOOOOoooooooooooooo
+func checkCondition(leaf) -> bool:
+	if not leaf.hasCondition:
+		return true
+	else:
+		if leaf.condition in $SpeechConditions.list:
+			return $SpeechConditions.list[leaf.condition]
+		else:
+			return false
 		
 func closeDialogue():
 	$Dialogue.hide()
@@ -181,6 +165,3 @@ func createSpeechTree(filePath) -> SpeechTree:
 func _on_Next_pressed():
 	# Show options
 	showOptions(speechTree.shownLeaf)
-	
-func bigFunnyHaHa():
-	print("Hello nerd")

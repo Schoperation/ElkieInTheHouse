@@ -14,13 +14,13 @@ func _process(delta):
 	var velocity = Vector2()
 	
 	# Detect keystrokes
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_action_pressed("elkie_left"):
 		velocity.x -= 1
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_action_pressed("elkie_right"):
 		velocity.x += 1
-	if Input.is_key_pressed(KEY_W):
+	if Input.is_action_pressed("elkie_up"):
 		velocity.y -= 1
-	if Input.is_key_pressed(KEY_S):
+	if Input.is_action_pressed("elkie_down"):
 		velocity.y += 1
 		
 	# Normalize and determine animation
