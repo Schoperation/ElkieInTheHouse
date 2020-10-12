@@ -36,5 +36,5 @@ func _process(delta):
 	
 	# Set position of player
 	position += velocity * delta
-	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
-	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
+	#position.x = clamp(position.x, 0, get_viewport_rect().size.x)
+	#position.y = clamp(position.y, 0, get_viewport_rect().size.y)

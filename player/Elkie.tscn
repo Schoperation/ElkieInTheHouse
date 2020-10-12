@@ -45,3 +45,13 @@ shape = SubResource( 2 )
 
 [node name="DIalogueComponent" parent="." instance=ExtResource( 12 )]
 speechJson = "res://speech/sample.json"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 7.0
+drag_margin_left = 0.4
+drag_margin_top = 0.4
+drag_margin_right = 0.4
+drag_margin_bottom = 0.4
+editor_draw_drag_margin = true
